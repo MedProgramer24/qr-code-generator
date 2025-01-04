@@ -1,8 +1,9 @@
-QR Code Generator
-This project is a QR Code Generator web application that allows users to easily create QR codes by entering a URL and selecting a size. Users can also download the generated QR code as an image.
+<h1>QR Code Generator</h1>
 
-Features
-Enter a URL to generate its corresponding QR code.
+<h2>This project is a QR Code Generator web application that allows users to easily create QR codes <br> by entering a URL and selecting a size. Users can also download the generated QR code as an image.</h2>
+
+<h3>Features</h3>
+<pre>>Enter a URL to generate its corresponding QR code.
 Choose the size of the QR code.
 Download the generated QR code as a PNG image.
 Responsive design built with Tailwind CSS for a seamless user experience.
@@ -17,7 +18,7 @@ Technologies Used
 HTML
 JavaScript (for QR code generation and functionality)
 Tailwind CSS (for styling)
-QRCode.js (for generating QR codes)
+QRCode.js (for generating QR codes)</pre>
 
 Copyright
 © 2025 Mohamed Ait Lashen. All rights reserved.
