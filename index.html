@@ -37,7 +37,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="js/script.js" defer></script>
     <title>Modern QR Code Generator</title>
   </head>
   <body class="bg-gray-100 text-gray-800 font-sans">
@@ -102,11 +101,6 @@
 
         <!-- QR Code Preview Section -->
         <div class="flex flex-col items-center justify-center space-y-6">
-          <img
-            src="qr-code-scan-icon-flat-style-mobile-phone-scanning-vector-illustration-isolated-background-barcode-reader-sign-business-concept_157943-2521-removebg-preview.png"
-            alt="QR Code Placeholder"
-            class="w-3/4 md:w-2/3 lg:w-1/2 mb-6"
-          />
           <div id="qrcode" class="w-full max-w-[300px]"></div>
           <div id="spinner" role="status" class="mt-6 hidden">
             <svg
@@ -127,9 +121,10 @@
           </div>
 
           <!-- Save Button Section -->
-          <button id="saveButton" class="w-full bg-green-500 text-white font-semibold py-3 rounded-lg hover:bg-green-600 mt-6">
-            Save QR Code
+          <button id="saveButton" class="w-full bg-green-500 text-white font-semibold py-3 rounded-lg hover:bg-green-600 mt-5" style="margin-top: 80px;">
+            
           </button>
+          
         </div>
       </div>
     </main>
@@ -140,39 +135,7 @@
         <p>© 2025 QR Code Generator. All Rights Reserved.</p>
       </div>
     </footer>
+    <script src="./js/script.js"></script>
 
-    <script>
-      document.getElementById('generate-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const url = document.getElementById('url').value;
-        const size = document.getElementById('size').value;
-
-        // Show the spinner
-        document.getElementById('spinner').classList.remove('hidden');
-
-        // Generate the QR code
-        const qrcode = new QRCode(document.getElementById("qrcode"), {
-          text: url,
-          width: size,
-          height: size,
-        });
-
-        // Hide the spinner after QR code generation
-        setTimeout(() => {
-          document.getElementById('spinner').classList.add('hidden');
-        }, 1000);
-      });
-
-      document.getElementById('saveButton').addEventListener('click', function() {
-        const canvas = document.querySelector('canvas');
-        if (canvas) {
-          const dataURL = canvas.toDataURL("image/png");
-          const link = document.createElement('a');
-          link.href = dataURL;
-          link.download = 'qrcode.png';
-          link.click();
-        }
-      });
-    </script>
   </body>
 </html>
